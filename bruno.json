@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Polygon.io",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}
