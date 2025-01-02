@@ -1,0 +1,27 @@
+meta {
+  name: Previous Close
+  type: http
+  seq: 4
+}
+
+get {
+  url: https://api.polygon.io/v2/aggs/ticker/:symbol/prev
+  body: none
+  auth: inherit
+}
+
+params:query {
+  ~adjusted: true
+}
+
+params:path {
+  symbol: AMD
+}
+
+docs {
+  # Previous Close
+  
+  Get the previous day's open, high, low, and close (OHLC) for the specified stock ticker.
+  
+  [API docs](https://polygon.io/docs/stocks/get_v2_aggs_ticker__stocksticker__prev)
+}
