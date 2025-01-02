@@ -1,0 +1,28 @@
+meta {
+  name: Grouped Daily
+  type: http
+  seq: 2
+}
+
+get {
+  url: https://api.polygon.io/v2/aggs/grouped/locale/us/market/stocks/:date?adjusted=true
+  body: none
+  auth: inherit
+}
+
+params:query {
+  adjusted: true
+  ~include_otc: false
+}
+
+params:path {
+  date: 2024-12-02
+}
+
+docs {
+  # Aggregates (Bars)
+  
+  Get aggregate bars for a stock over a given date range in custom time window sizes.
+  
+  [API docs](https://polygon.io/docs/stocks/get_v2_aggs_ticker__stocksticker__range__multiplier___timespan___from___to)
+}
