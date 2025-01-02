@@ -1,0 +1,28 @@
+meta {
+  name: Daily Open-Close
+  type: http
+  seq: 3
+}
+
+get {
+  url: https://api.polygon.io/v1/open-close/:symbol/:date
+  body: none
+  auth: inherit
+}
+
+params:query {
+  ~adjusted: true
+}
+
+params:path {
+  symbol: AMD
+  date: 2024-01-09
+}
+
+docs {
+  # Daily Open/Close
+  
+  Get the open, close and afterhours prices of a stock symbol on a certain date.
+  
+  [API docs](https://polygon.io/docs/stocks/get_v1_open-close__stocksticker___date)
+}
