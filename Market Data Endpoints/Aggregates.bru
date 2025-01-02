@@ -1,0 +1,33 @@
+meta {
+  name: Aggregates
+  type: http
+  seq: 1
+}
+
+get {
+  url: https://api.polygon.io/v2/aggs/ticker/:symbol/range/:multiplier/:timespan/:from/:to?adjusted=true&sort=true&limit=5000
+  body: none
+  auth: inherit
+}
+
+params:query {
+  adjusted: true
+  sort: true
+  limit: 5000
+}
+
+params:path {
+  to: 2024-02-01
+  from: 2024-01-01
+  timespan: day
+  multiplier: 1
+  symbol: AMD
+}
+
+docs {
+  # Aggregates (Bars)
+  
+  Get aggregate bars for a stock over a given date range in custom time window sizes.
+  
+  [API docs](https://polygon.io/docs/stocks/get_v2_aggs_ticker__stocksticker__range__multiplier___timespan___from___to)
+}
